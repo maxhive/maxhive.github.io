@@ -1,74 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-
-  <title>MaxHive | Simple Cybersecurity Tools for Everyone</title>
-  <meta name="description"
-    content="MaxHive provides easy-to-use tools that help you check data exposure, improve privacy, and understand online security in a simple way.">
-  <meta name="keywords"
-    content="cybersecurity tools for beginners, check data breach, online privacy tools, free security tools, learn cybersecurity basics">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://maxhive.qzz.io/" />
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png" />
-  <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64x64.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="/assets/site.webmanifest" />
-  <meta name="theme-color" content="#0f172a" />
-  <meta name="msapplication-config" content="/assets/browserconfig.xml" />
-  <meta name="msapplication-TileColor" content="#0f172a" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="MaxHive - Simple Security Tools" />
-  <meta property="og:description"
-    content="Check data exposure, improve privacy, and stay safe online with easy-to-use tools." />
-  <meta property="og:image" content="https://maxhive.qzz.io/assets/og-image.jpg" />
-  <meta property="og:url" content="https://maxhive.qzz.io/" />
-  <meta property="og:site_name" content="MaxHive" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MaxHive - Simple Security Tools" />
-  <meta name="twitter:description" content="Check data exposure and stay safe online with our easy-to-use tools." />
-  <meta name="twitter:image" content="https://maxhive.qzz.io/assets/twitter-card.jpg" />
-  <script type="module" crossorigin src="/assets/index-CeVGi0O-.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Bs581NnH.css">
-</head>
-
-<body>
-  <div id="root"></div>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function (registrations) {
-        for (let registration of registrations) {
-          registration.unregister();
-          console.log('ServiceWorker unregistered.');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            overflow: hidden;
         }
-      });
-      caches.keys().then(function (names) {
-        for (let name of names) caches.delete(name);
-      });
-    }
-    // Restore SPA route after GitHub Pages 404 redirect
-    var redirect = sessionStorage.getItem('gh-pages-redirect');
-    if (redirect) {
-      sessionStorage.removeItem('gh-pages-redirect');
-      history.replaceState(null, '', redirect);
-    }
-  </script>
-</body>
 
+        /* Animated background glow */
+        .aura {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(5, 5, 5, 0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            animation: pulse 8s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+        }
+
+        .premium-border {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-8">
+
+    <div class="aura"></div>
+
+    <main class="text-center space-y-12 max-w-lg">
+        
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full premium-border bg-white/5 backdrop-blur-sm">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+            </span>
+            <span class="text-[10px] uppercase tracking-[0.2em] font-medium text-slate-400">System Upgrade in Progress</span>
+        </div>
+
+        <div class="space-y-6">
+            <h1 class="text-5xl md:text-7xl font-extralight tracking-tight leading-tight">
+                Refining <br/>
+                <span class="font-bold">Better things.</span>
+            </h1>
+            <p class="text-slate-500 text-sm md:text-base max-w-xs mx-auto font-light leading-relaxed">
+                We are currently offline for scheduled maintenance. Normal service will resume shortly.
+            </p>
+        </div>
+
+        <div class="pt-4">
+            <div class="h-[1px] w-48 bg-white/10 mx-auto relative overflow-hidden">
+                <div class="absolute h-full bg-sky-500 w-1/3 animate-[loading_2s_infinite_ease-in-out]"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <style>
+        @keyframes loading {
+            0% { left: -40%; width: 30%; }
+            50% { width: 50%; }
+            100% { left: 110%; width: 30%; }
+        }
+    </style>
+
+</body>
 </html>
