@@ -1,151 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaxHive | Page Not Found</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page Not Found</title>
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: hsl(220, 30%, 6%);
-            color: hsl(213, 31%, 91%);
-            font-family: 'Inter', system-ui, sans-serif;
-            overflow: hidden;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        .container {
-            text-align: center;
-            z-index: 10;
-            position: relative;
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins, sans-serif;
+}
 
-        .code {
-            font-size: 8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, hsl(217, 91%, 60%), hsl(260, 70%, 70%));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c1c3c);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+overflow:hidden;
+color:white;
+}
 
-        .title {
-            font-size: 1.25rem;
-            color: hsl(215, 20%, 55%);
-            margin-bottom: 0.25rem;
-        }
+@keyframes bg{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
 
-        .subtitle {
-            font-size: 0.875rem;
-            color: hsl(215, 20%, 40%);
-            margin-bottom: 2rem;
-        }
+/* floating bubbles */
 
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            font-size: 0.875rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-            font-family: inherit;
-        }
+body::before,
+body::after{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+border-radius:50%;
+filter:blur(140px);
+opacity:.35;
+z-index:0;
+}
 
-        .btn-primary {
-            background: hsl(217, 91%, 60%);
-            color: hsl(222, 47%, 11%);
-            box-shadow: 0 0 24px hsla(217, 91%, 60%, 0.35);
-        }
+body::before{
+background:#00eaff;
+top:-200px;
+left:-150px;
+animation:float1 16s infinite alternate ease-in-out;
+}
 
-        .btn-primary:hover {
-            background: hsl(217, 91%, 55%);
-            box-shadow: 0 0 32px hsla(217, 91%, 60%, 0.5);
-        }
+body::after{
+background:#ff00c8;
+bottom:-200px;
+right:-150px;
+animation:float2 18s infinite alternate ease-in-out;
+}
 
-        .btn-outline {
-            background: transparent;
-            color: hsl(213, 31%, 91%);
-            border: 1px solid hsl(217, 25%, 16%);
-            margin-left: 0.75rem;
-        }
+@keyframes float1{
+from{transform:translateY(0)}
+to{transform:translateY(120px)}
+}
 
-        .btn-outline:hover {
-            background: hsl(217, 25%, 12%);
-        }
+@keyframes float2{
+from{transform:translateY(0)}
+to{transform:translateY(-120px)}
+}
 
-        .blob {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.4;
-            animation: pulse 4s ease-in-out infinite alternate;
-        }
+/* glass card */
 
-        .blob-1 {
-            width: 400px;
-            height: 400px;
-            background: hsla(217, 91%, 60%, 0.15);
-            top: 20%;
-            left: 30%;
-        }
+.card{
+position:relative;
+z-index:2;
+padding:60px 70px;
+border-radius:28px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.15);
+text-align:center;
+box-shadow:0 30px 60px rgba(0,0,0,0.45);
+animation:fadeUp 1.2s ease;
+}
 
-        .blob-2 {
-            width: 300px;
-            height: 300px;
-            background: hsla(260, 70%, 50%, 0.1);
-            bottom: 20%;
-            right: 20%;
-        }
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(60px)}
+to{opacity:1; transform:translateY(0)}
+}
 
-        @keyframes pulse {
-            from {
-                transform: scale(1);
-            }
+.big404{
+font-size:120px;
+font-weight:700;
+letter-spacing:6px;
+background:linear-gradient(90deg,#fff,#00eaff,#fff);
+-webkit-background-clip:text;
+color:transparent;
+animation:shine 4s linear infinite;
+}
 
-            to {
-                transform: scale(1.15);
-            }
-        }
-    </style>
-    <script>
-        // GitHub Pages SPA redirect: preserves the path for the SPA router
-        (function () {
-            var path = window.location.pathname;
-            if (path !== '/xm/' && path !== '/xm/index.html') {
-                sessionStorage.setItem('gh-pages-redirect', path);
-                window.location.replace('/xm/');
-            }
-        })();
-    </script>
+@keyframes shine{
+0%{background-position:-400px}
+100%{background-position:400px}
+}
+
+h2{
+margin-top:10px;
+font-weight:600;
+}
+
+p{
+opacity:.85;
+margin-top:12px;
+font-size:15px;
+}
+
+.btn{
+display:inline-block;
+margin-top:32px;
+padding:16px 36px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:600;
+background:linear-gradient(90deg,#00eaff,#7a5cff);
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+transition:.35s;
+position:relative;
+overflow:hidden;
+}
+
+.btn:hover{
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 18px 40px rgba(0,0,0,.5);
+}
+
+.btn:after{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:60%;
+height:100%;
+background:rgba(255,255,255,.35);
+transform:skewX(-25deg);
+transition:.7s;
+}
+
+.btn:hover:after{
+left:130%;
+}
+
+/* animated dots background */
+
+.particles span{
+position:absolute;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+opacity:.6;
+animation:rise linear infinite;
+}
+
+@keyframes rise{
+from{transform:translateY(0); opacity:.7}
+to{transform:translateY(-1200px); opacity:0}
+}
+</style>
 </head>
 
 <body>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="container">
-        <div class="code">404</div>
-        <p class="title">Page Not Found</p>
-        <p class="subtitle">The page you're looking for doesn't exist or has been moved.</p>
-        <div>
-            <a href="/xm/" class="btn btn-primary">← Go Home</a>
-            <a href="/xm/#auth" class="btn btn-outline" onclick="sessionStorage.setItem('gh-page','auth')">Login</a>
-        </div>
-    </div>
-</body>
 
+<div class="particles" id="particles"></div>
+
+<div class="card">
+<div class="big404">404</div>
+<h2>Oops! Page Not Found</h2>
+<p>The page you’re looking for doesn’t exist or moved.</p>
+<a href="/" class="btn">Go Back Home</a>
+</div>
+
+<script>
+// generate floating particles dynamically
+const container=document.getElementById("particles");
+
+for(let i=0;i<40;i++){
+let dot=document.createElement("span");
+
+dot.style.left=Math.random()*100+"vw";
+dot.style.bottom="-20px";
+dot.style.animationDuration=(5+Math.random()*10)+"s";
+dot.style.animationDelay=Math.random()*5+"s";
+
+container.appendChild(dot);
+}
+</script>
+
+</body>
 </html>
